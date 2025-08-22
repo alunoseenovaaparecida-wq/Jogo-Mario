@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- Define o tipo de documento como HTML5 -->
+<html lang="pt-BR">
+<!-- Início do documento HTML com idioma definido como português do Brasil -->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres como UTF-8, suportando acentuação -->
+
+    <link rel="stylesheet" href="styles.css">
+    <!-- Importa o arquivo de estilos CSS externo -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Garante que o site seja responsivo em dispositivos móveis -->
+
+    <title>GOKU</title>
+    <!-- Título da aba do navegador -->
+</head>
+
+<body>
+    <!-- Corpo do site -->
+    
+    <div class="game">
+
+        <!-- Área principal do jogo -->
+
+        <img class="goku" src="img/goku.gif" alt="Goku">
+        <!-- Imagem do personagem Goku (com animação GIF) -->
+
+        <img class="pipe" src="img/pipe.png" alt="cano">
+        <!-- Imagem do obstáculo (cano) que se move para o Goku evitar -->
+
+        <img class="clouds" src="img/clouds.png" alt="nuvem">
+        <!-- Imagem das nuvens em movimento no fundo -->
+
+        <button class="start" onclick="startGame()">Iniciar</button>
+        <!-- Botão que inicia o jogo. Ao clicar, executa a função JavaScript "startGame()" -->
+
+
+    <div class="score">Pontos: 0</div>  <!-- Botão de pontuação) -->
+
+    </div>
+    <div class="game-over">
+        <!-- Tela exibida quando o jogador perde (Game Over) -->
+
+        <h1>O treinamento constante é a chave para o poder ilimitado :)</h1>
+        <!-- Mensagem de fim de jogo -->
+
+        <button onclick="restartGame()">Reiniciar</button>
+        <!-- Botão para reiniciar o jogo. Executa a função JavaScript "restartGame()" -->
+
+
+    </div>
+</body>
+
+<script src="script.js"></script>
+<!-- Importa o arquivo de script JavaScript que contém a lógica do jogo -->
+
+</html>
+<!-- Fim do documento HTML -->

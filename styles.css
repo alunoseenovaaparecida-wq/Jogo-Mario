@@ -1,0 +1,143 @@
+ /* Zera margens e preenchimentos padrão, e usa o modelo de caixa com border-box */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Área principal do jogo */
+.game {
+    width: 100%; /* ocupa 100% da largura da tela */
+    height: 100vh; /* ocupa toda a altura da tela */
+    border-bottom: 30px solid green; /* simula o chão com uma borda verde */
+    margin: 0 auto;
+    position: relative; /* permite posicionamento absoluto dos elementos filhos */
+    overflow: hidden; /* impede elementos de ultrapassarem a borda da área de jogo */
+    background: linear-gradient(#87cee8, #e0f6ff); /* céu com gradiente */
+}
+
+/* Estilo dos botões (iniciar e reiniciar) */
+button {
+    background: green;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border: none;
+    padding: 1rem;
+    position: absolute;
+    left: 50%; /* centraliza horizontalmente */
+    top: 50%;  /* centraliza verticalmente */
+    transform: translate(-50%, -50%); /* ajusta para o centro exato */
+    cursor: pointer;
+    z-index: 1; /* garante que fique acima das imagens */
+}
+
+/* Efeito ao passar o mouse sobre os botões */
+button:hover {
+    border: 2px solid green;
+    background: none;
+    color: green;
+}
+
+/* Tela de Game Over (fica oculta até o fim do jogo) */
+.game-over {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); /* fundo escuro transparente */
+    display: none; /* começa escondida */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed; /* cobre toda a tela */
+    top: 0;
+    left: 0;
+}
+
+.score {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 36px;
+    color: rgb(89, 17, 177);
+    font-family: Arial, sans-serif;
+    z-index: 10;
+}
+
+/* Estilo do texto "Game Over" */
+.game-over h1 {
+    font-size: 3rem;
+    color: red;
+    text-align: center;
+    margin-top: 15rem;
+}
+
+/* Obstáculo (cano) */
+.pipe {
+    position: absolute;
+    bottom: 0;
+    right: -80px; /* começa fora da tela */
+    width: 80px;
+}
+
+/* Personagem Goku */
+.goku {
+    width: 150px;
+    position: absolute;
+    bottom: 0; /* no chão */
+}
+
+/* Nuvens no fundo */
+.clouds {
+    width: 550px;
+    position: absolute;
+    animation: clouds-animation 20s infinite linear; /* animação contínua das nuvens */
+}
+
+/* Animação das nuvens se movendo da direita para a esquerda */
+@keyframes clouds-animation {
+    from {
+        right: -550px; /* começa fora da tela */
+    }
+    to {
+        right: 100%; /* move para fora do outro lado */
+    }
+}
+
+/* Classe aplicada ao cano para ativar a animação de movimento */
+.pipe-animation {
+    animation: pipe-animation 2s infinite linear;
+}
+
+/* Animação do cano se movendo da direita para a esquerda */
+@keyframes pipe-animation {
+    from {
+        right: -80px; /* fora da tela */
+    }
+    to {
+        right: 100%; /* atravessa toda a tela para a esquerda */
+    }
+}
+
+/* Classe aplicada ao Goku quando ele pula */
+.jump {
+    animation: jump 800ms ease-out; /* pulo com duração de 800ms */
+}
+
+/* Animação do pulo do Goku */
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+    40% {
+        bottom: 200px;
+    }
+    50% {
+        bottom: 200px;
+    }
+    60% {
+        bottom: 200px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
